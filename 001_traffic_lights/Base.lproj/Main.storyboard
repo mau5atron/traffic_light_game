@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="BradleyHand-Bold.ttf">
+            <string>BradleyHandITCTT-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="nkw-2m-rRB">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5c-mo-lOx">
+                                <rect key="frame" x="16" y="201" width="343" height="319"/>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trafficLight" translatesAutoresizingMaskIntoConstraints="NO" id="wCp-Hu-rW5">
+                                <rect key="frame" x="51" y="44" width="288" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="KCV-yl-igr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5c-3d-oPU">
+                                <rect key="frame" x="88" y="564" width="198" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="k5c-3d-oPU" secondAttribute="height" multiplier="11:10" id="X6t-Cv-JRB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="46"/>
+                                <state key="normal" title="Start" backgroundImage="stopButton">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="evB-nz-7Rn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wCp-Hu-rW5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="1kS-aA-JIm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c5c-mo-lOx" secondAttribute="trailing" constant="16" id="8Bs-x0-eli"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k5c-3d-oPU" secondAttribute="trailing" constant="89" id="Iow-L9-HI6"/>
+                            <constraint firstItem="wCp-Hu-rW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="K1o-LR-to3"/>
+                            <constraint firstItem="nkw-2m-rRB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kvy-AB-C5C"/>
+                            <constraint firstItem="wCp-Hu-rW5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Mnp-X1-UIe"/>
+                            <constraint firstItem="c5c-mo-lOx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="NLO-ZM-g4B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wCp-Hu-rW5" secondAttribute="trailing" constant="36" id="Nd8-5A-91B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wCp-Hu-rW5" secondAttribute="trailing" constant="36" id="Sk8-e9-Kh7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="k5c-3d-oPU" secondAttribute="bottom" constant="34" id="Tkx-Na-YZ0"/>
+                            <constraint firstItem="nkw-2m-rRB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dQi-yF-oSh"/>
+                            <constraint firstItem="wCp-Hu-rW5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="51" id="emh-r7-7w3"/>
+                            <constraint firstItem="c5c-mo-lOx" firstAttribute="top" secondItem="wCp-Hu-rW5" secondAttribute="bottom" constant="27" id="i1Q-ck-W1s"/>
+                            <constraint firstItem="nkw-2m-rRB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="k8e-wQ-yA8"/>
+                            <constraint firstItem="nkw-2m-rRB" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="rQW-Sf-lc0"/>
+                            <constraint firstItem="k5c-3d-oPU" firstAttribute="top" secondItem="c5c-mo-lOx" secondAttribute="bottom" constant="44" id="tuX-0Z-3I3"/>
+                            <constraint firstItem="k5c-3d-oPU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="vZj-H6-dbW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="scoreLabel" destination="c5c-mo-lOx" id="nyC-xf-EFJ"/>
+                        <outlet property="startBtn" destination="k5c-3d-oPU" id="dog-HK-JwQ"/>
+                        <outlet property="trafficLight" destination="wCp-Hu-rW5" id="DD5-Uy-YSI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.22660098522168"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="1600" height="900"/>
+        <image name="stopButton" width="1000" height="1000"/>
+        <image name="trafficLight" width="1500" height="600"/>
+    </resources>
 </document>
