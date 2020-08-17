@@ -50,6 +50,7 @@
 - (void)startTimer {
 	timerInt--;
 	NSLog(@"timerInt @ startTimer func %i", timerInt);
+	self.startBtn.enabled = FALSE; // disable the start button after starting to avoid restarting game
 	switch (timerInt) {
 		case 2:
 			self.trafficLight.image= [UIImage imageNamed:@"trafficLight3"];
@@ -63,6 +64,7 @@
 			
 			[self.startBtn setTitle:@"Stop" forState:UIControlStateNormal];
 			scoreTimer = [NSTimer scheduledTimerWithTimeInterval:0.0001 target:self selector:@selector(scoreCounter) userInfo:NULL repeats:TRUE];
+			self.startBtn.enabled = TRUE;
 			break;
 		default:
 			break;
